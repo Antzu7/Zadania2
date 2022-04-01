@@ -3,30 +3,36 @@
 /* Добавьте на блок .div-1 событие клик и по клику запуск функции t1. Функция должна возвращать и выводить на экран содержимое блока (только текст). Вывод осуществляется в out-1.  */
 
 function t1() {
+    document.querySelector('.out-1').textContent = document.querySelector('.div-1').innerHTML;
 }
 
-// ваше событие здесь!!!
+document.querySelector('.div-1').onclick = t1;
 
 // Task 2 ============================================
 /*  Добавьте на блок .div-2 событие клик и по клику запуск функции t2. Функция должна возвращать true или false в зависимости от того, нажата ли клавиша alt или нет в момент клика. Также, выводите на экран результат. Вывод осуществляется в out-2. */
 
 function t2() {
-
+    if (event.altKey)
+        document.querySelector('.out-2').textContent = true;
+    else
+        document.querySelector('.out-2').textContent = false;
 }
 
-// ваше событие здесь!!!
+document.querySelector('.div-2').onclick = t2
 
 
 // Task 3 ============================================
 /*  Добавьте на блок .div-3 событие клик. При клике - увеличивайте ширину блока на 5px. Каждый клик - увеличение ширины на 5px. 10 кликов - на 50px. Ширину выводите в out-3. */
 
 let w3 = 75;
+let delta = 5;
 
 function t3() {
-
+    let div3 = document.querySelector('.div-3');
+    div3.style.width = `${w3 += delta}px`;
 }
 
-// ваше событие здесь!!!
+document.querySelector('.div-3').onclick = t3
 
 
 // Task 4 ============================================
